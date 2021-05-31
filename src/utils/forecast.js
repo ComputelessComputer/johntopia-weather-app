@@ -11,7 +11,8 @@ const forecast = (geoInfo) =>
       const weather = response.data.current.weather_descriptions.join(" & ");
       return {
         placeName: geoInfo.placeName,
-        weather: temp + " Degrees Celcius, " + weather,
+        weather:
+          "Current temperature is " + temp + "°C and the weather is " + weather,
         error: undefined,
       };
     })
@@ -19,7 +20,7 @@ const forecast = (geoInfo) =>
       return {
         placeName: undefined,
         weather: undefined,
-        error: "Error: Insufficient location information",
+        error: "Insufficient location information",
       };
     });
 

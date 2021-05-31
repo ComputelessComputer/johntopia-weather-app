@@ -44,13 +44,12 @@ app.get("/help", (req, res) => {
 
 app.get("/weather", (req, res) => {
   const location = req.query.location;
-  if (!location) return res.send({ error: "Error: No location provided" });
 
   geocode(location)
     .then((geoInfo) =>
       forecast(geoInfo).then((forecastInfo) => res.send(forecastInfo))
     )
-    .catch((error) => res.send({ error: `Error: ${error}` }));
+    .catch((error) => res.send({ error: `Insufficient location` }));
 });
 
 app.get("/404", (req, res) => {

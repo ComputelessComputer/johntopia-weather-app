@@ -1,6 +1,6 @@
 const axios = require("axios");
 
-const geocode = (location) =>
+const geocode = (location = "") =>
   axios
     .get(
       `https://api.mapbox.com/geocoding/v5/mapbox.places/${location}.json?access_token=pk.eyJ1IjoiYm90c2Zvcm1lIiwiYSI6ImNrbXU4bXptbTBrZ3cydnBjbWc2MXMxZ2UifQ.XcX5TX9LIP4N_eGqNcs0kg&limit=1`
